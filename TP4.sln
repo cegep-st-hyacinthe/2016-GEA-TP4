@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchec", "JeuEchec\JeuEchec.csproj", "{4A489111-0800-4172-993A-A38CAE05EF09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchecLibrary", "JeuEchecLibrary\JeuEchecLibrary.csproj", "{9742FDFF-AA62-43A5-8F6C-8EE7BC0659CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchecLibrarie", "JeuEchecLibrarie\JeuEchecLibrarie.csproj", "{A12546AB-0A12-4DEC-8D97-EEA42F13E6D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4A489111-0800-4172-993A-A38CAE05EF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A489111-0800-4172-993A-A38CAE05EF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A489111-0800-4172-993A-A38CAE05EF09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9742FDFF-AA62-43A5-8F6C-8EE7BC0659CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9742FDFF-AA62-43A5-8F6C-8EE7BC0659CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9742FDFF-AA62-43A5-8F6C-8EE7BC0659CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9742FDFF-AA62-43A5-8F6C-8EE7BC0659CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12546AB-0A12-4DEC-8D97-EEA42F13E6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12546AB-0A12-4DEC-8D97-EEA42F13E6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12546AB-0A12-4DEC-8D97-EEA42F13E6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12546AB-0A12-4DEC-8D97-EEA42F13E6D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
