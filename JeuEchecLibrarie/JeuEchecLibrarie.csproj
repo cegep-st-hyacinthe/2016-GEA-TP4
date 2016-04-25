@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Joueur.cs" />
+    <Compile Include="Pieces\Cavalier.cs" />
+    <Compile Include="Couleurs.cs" />
+    <Compile Include="Pieces\Fou.cs" />
+    <Compile Include="Pieces\Piece.cs" />
+    <Compile Include="Pieces\Pion.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pieces\Reine.cs" />
+    <Compile Include="Pieces\Roi.cs" />
+    <Compile Include="Pieces\Tour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="JeuEchec.cd" />

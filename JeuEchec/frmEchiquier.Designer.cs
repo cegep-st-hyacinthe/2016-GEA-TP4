@@ -38,6 +38,7 @@
             this.itmQuitter = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.itmAfficherBlancs = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageSprite1 = new VisualArrays.ImageSprite();
             this.mnuGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,8 @@
             this.viaEchiquier.RowHeader.ForeColor = System.Drawing.Color.White;
             this.viaEchiquier.SelectionMode = System.Windows.Forms.SelectionMode.One;
             this.viaEchiquier.Size = new System.Drawing.Size(644, 644);
+            this.viaEchiquier.Sprites.AddRange(new VisualArrays.Sprite[] {
+            this.imageSprite1});
             this.viaEchiquier.TabIndex = 0;
             this.viaEchiquier.View = VisualArrays.enuIntView.ImageList;
             // 
@@ -92,7 +95,7 @@
             // itmReinitialiser
             // 
             this.itmReinitialiser.Name = "itmReinitialiser";
-            this.itmReinitialiser.Size = new System.Drawing.Size(152, 22);
+            this.itmReinitialiser.Size = new System.Drawing.Size(134, 22);
             this.itmReinitialiser.Text = "Réinitialiser";
             // 
             // itmQuitter
@@ -115,6 +118,11 @@
             this.itmAfficherBlancs.Name = "itmAfficherBlancs";
             this.itmAfficherBlancs.Size = new System.Drawing.Size(170, 22);
             this.itmAfficherBlancs.Text = "Afficher les blancs";
+            // 
+            // imageSprite1
+            // 
+            this.imageSprite1.Image = global::JeuEchec.Properties.Resources.blanc_cavalier;
+            this.imageSprite1.Name = "imageSprite1";
             // 
             // frmEchiquier
             // 
@@ -148,7 +156,7 @@
         private System.Windows.Forms.ToolStripMenuItem itmQuitter;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem itmAfficherBlancs;
-
+        private VisualArrays.ImageSprite imageSprite1;
     }
 }
 

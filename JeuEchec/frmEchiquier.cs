@@ -56,5 +56,6 @@ namespace JeuEchec
             // Placer les pièces à la position de départ.
         }
         #endregion
+
     }
 }
