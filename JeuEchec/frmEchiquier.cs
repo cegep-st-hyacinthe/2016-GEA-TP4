@@ -56,5 +56,10 @@ namespace JeuEchec
             // Placer les pièces à la position de départ.
         }
         #endregion
+
+        private void itmQuitter_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

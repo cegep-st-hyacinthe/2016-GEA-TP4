@@ -98,8 +98,9 @@
             // itmQuitter
             // 
             this.itmQuitter.Name = "itmQuitter";
-            this.itmQuitter.Size = new System.Drawing.Size(134, 22);
+            this.itmQuitter.Size = new System.Drawing.Size(152, 22);
             this.itmQuitter.Text = "Quitter";
+            this.itmQuitter.Click += new System.EventHandler(this.itmQuitter_Click);
             // 
             // mnuOptions
             // 
