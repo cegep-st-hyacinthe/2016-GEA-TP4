@@ -45,5 +45,9 @@ namespace JeuEchec
 
         #endregion
 
+        private void itmQuitter_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
