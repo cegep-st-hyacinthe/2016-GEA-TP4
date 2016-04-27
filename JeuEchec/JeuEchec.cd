@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JeuEchec.Librarie.Echiquier" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Librarie\Echiquier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JeuEchec.Librarie.Joueur" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Librarie\Joueur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JeuEchec.Librarie.Piece" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Librarie\Pieces\Piece.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JeuEchec.Librarie.Position" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Librarie\Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="JeuEchec.Librarie.Couleurs" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAA=</HashCode>
+      <FileName>Librarie\Couleurs.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

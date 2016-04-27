@@ -64,6 +64,7 @@
             this.imageSprite1});
             this.viaEchiquier.TabIndex = 0;
             this.viaEchiquier.View = VisualArrays.enuIntView.ImageList;
+            this.viaEchiquier.Load += new System.EventHandler(this.viaEchiquier_Load);
             // 
             // imlCases
             // 
@@ -100,13 +101,13 @@
             // itmReinitialiser
             // 
             this.itmReinitialiser.Name = "itmReinitialiser";
-            this.itmReinitialiser.Size = new System.Drawing.Size(152, 22);
+            this.itmReinitialiser.Size = new System.Drawing.Size(134, 22);
             this.itmReinitialiser.Text = "Réinitialiser";
             // 
             // itmQuitter
             // 
             this.itmQuitter.Name = "itmQuitter";
-            this.itmQuitter.Size = new System.Drawing.Size(152, 22);
+            this.itmQuitter.Size = new System.Drawing.Size(134, 22);
             this.itmQuitter.Text = "Quitter";
             this.itmQuitter.Click += new System.EventHandler(this.itmQuitter_Click);
             // 
@@ -139,7 +140,6 @@
             this.Name = "frmEchiquier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jeu d\'échec - déplacement de pièces";
-            this.Load += new System.EventHandler(this.frmEchiquier_Load);
             this.mnuGeneral.ResumeLayout(false);
             this.mnuGeneral.PerformLayout();
             this.ResumeLayout(false);

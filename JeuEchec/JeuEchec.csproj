@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JeuEchec</RootNamespace>
     <AssemblyName>JeuEchec</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +54,15 @@
     <Compile Include="frmEchiquier.Designer.cs">
       <DependentUpon>frmEchiquier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Librarie\Couleurs.cs" />
+    <Compile Include="Librarie\Echiquier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarie\Joueur.cs" />
+    <Compile Include="Librarie\Pieces\Piece.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Librarie\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEchiquier.resx">
@@ -68,6 +78,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="JeuEchec.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,12 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VisualArrays.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JeuEchecLibrarie\JeuEchecLibrarie.csproj">
-      <Project>{a12546ab-0a12-4dec-8d97-eea42f13e6d0}</Project>
-      <Name>JeuEchecLibrarie</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JeuEchecLibrarie
+namespace JeuEchec.Librarie
 {
     public class Joueur
     {
-        public Couleur Couleur
+        public Couleurs Couleur
         {
             get
             {
