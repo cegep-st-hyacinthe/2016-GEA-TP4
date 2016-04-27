@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEchiquier));
             this.viaEchiquier = new VisualArrays.VisualIntArray();
             this.imlCases = new System.Windows.Forms.ImageList(this.components);
+            this.imageSprite1 = new VisualArrays.ImageSprite();
             this.mnuGeneral = new System.Windows.Forms.MenuStrip();
             this.mnuPartie = new System.Windows.Forms.ToolStripMenuItem();
             this.itmReinitialiser = new System.Windows.Forms.ToolStripMenuItem();
             this.itmQuitter = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.itmAfficherBlancs = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageSprite1 = new VisualArrays.ImageSprite();
             this.mnuGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,11 @@
             this.imlCases.Images.SetKeyName(0, "case_blanche.png");
             this.imlCases.Images.SetKeyName(1, "case_noir.png");
             // 
+            // imageSprite1
+            // 
+            this.imageSprite1.Image = global::JeuEchec.Properties.Resources.blanc_cavalier;
+            this.imageSprite1.Name = "imageSprite1";
+            // 
             // mnuGeneral
             // 
             this.mnuGeneral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -95,13 +100,13 @@
             // itmReinitialiser
             // 
             this.itmReinitialiser.Name = "itmReinitialiser";
-            this.itmReinitialiser.Size = new System.Drawing.Size(134, 22);
+            this.itmReinitialiser.Size = new System.Drawing.Size(152, 22);
             this.itmReinitialiser.Text = "Réinitialiser";
             // 
             // itmQuitter
             // 
             this.itmQuitter.Name = "itmQuitter";
-            this.itmQuitter.Size = new System.Drawing.Size(134, 22);
+            this.itmQuitter.Size = new System.Drawing.Size(152, 22);
             this.itmQuitter.Text = "Quitter";
             // 
             // mnuOptions
@@ -118,11 +123,6 @@
             this.itmAfficherBlancs.Name = "itmAfficherBlancs";
             this.itmAfficherBlancs.Size = new System.Drawing.Size(170, 22);
             this.itmAfficherBlancs.Text = "Afficher les blancs";
-            // 
-            // imageSprite1
-            // 
-            this.imageSprite1.Image = global::JeuEchec.Properties.Resources.blanc_cavalier;
-            this.imageSprite1.Name = "imageSprite1";
             // 
             // frmEchiquier
             // 

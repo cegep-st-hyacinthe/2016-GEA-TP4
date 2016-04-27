@@ -63,6 +63,13 @@
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="JeuEchecLibrarie.Echiquier">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Echiquier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="JeuEchecLibrarie.Couleurs" Collapsed="true">
     <Position X="14.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>

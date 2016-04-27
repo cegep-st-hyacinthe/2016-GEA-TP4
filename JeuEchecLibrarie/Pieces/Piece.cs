@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using VisualArrays;
 
 namespace JeuEchecLibrarie
 {
-    public abstract class Piece
+    public abstract class Piece : ImageSprite
     {
         public Piece()
         {

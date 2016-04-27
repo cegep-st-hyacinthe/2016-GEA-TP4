@@ -120,6 +120,12 @@
   <ItemGroup>
     <Content Include="VisualArrays.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JeuEchecLibrarie\JeuEchecLibrarie.csproj">
+      <Project>{a12546ab-0a12-4dec-8d97-eea42f13e6d0}</Project>
+      <Name>JeuEchecLibrarie</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
