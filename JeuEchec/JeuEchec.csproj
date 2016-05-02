@@ -69,6 +69,9 @@
     <Compile Include="Librairie\Pieces\Pion.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Librairie\Pieces\Roi.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Librairie\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
