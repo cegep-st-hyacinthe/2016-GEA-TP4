@@ -34,12 +34,17 @@ namespace JeuEchec.Librairie
 
         public Echiquier(VisualIntArray tableau, Piece[] pieces) : this (tableau)
         {
-            _tableau.Sprites.AddRange(pieces);
+            AjouterPieces(pieces);
         }
 
         #endregion
 
         #region Méthodes
+
+        public void AjouterPieces(Piece[] pieces)
+        {
+            _tableau.Sprites.AddRange(pieces);
+        }
 
         #endregion
     }
