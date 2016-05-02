@@ -12,6 +12,14 @@ namespace JeuEchec.Librairie
         public int Ligne { get; private set; }
         public int Colonne { get; private set; }
 
+        public int Index
+        {
+            get
+            {
+                return 8 * Colonne + Ligne;
+            }
+        }
+
         #endregion
 
         #region Constructeurs
