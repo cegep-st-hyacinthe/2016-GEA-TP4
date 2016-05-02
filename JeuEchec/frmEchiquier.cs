@@ -70,7 +70,25 @@ namespace JeuEchec
 
         private void itmAfficherBlancs_Click(object sender, EventArgs e)
         {
-
+            _echiquier.AjouterPieces(new Piece[]
+            {
+                new Pion(new Position(0, 0), Couleurs.Blanc),
+                new Pion(new Position(1, 1), Couleurs.Blanc),
+                new Pion(new Position(2, 1), Couleurs.Blanc),
+                new Pion(new Position(3, 1), Couleurs.Blanc),
+                new Pion(new Position(4, 1), Couleurs.Blanc),
+                new Pion(new Position(5, 1), Couleurs.Blanc),
+                new Pion(new Position(6, 1), Couleurs.Blanc),
+                new Pion(new Position(7, 1), Couleurs.Blanc),
+                new Tour(new Position(0, 0), Couleurs.Blanc),
+                new Cavalier(new Position(1, 0), Couleurs.Blanc),
+                new Fou(new Position(2, 0), Couleurs.Blanc),
+                new Roi(new Position(3, 0), Couleurs.Blanc),
+                new Reine(new Position(4, 0), Couleurs.Blanc),
+                new Fou(new Position(5, 0), Couleurs.Blanc),
+                new Cavalier(new Position(6, 0), Couleurs.Blanc),
+                new Tour(new Position(7, 0), Couleurs.Blanc),
+            });
         }
     }
 }
