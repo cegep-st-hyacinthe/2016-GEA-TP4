@@ -29,10 +29,12 @@ namespace JeuEchec.Librairie.Pieces
 
         public void Deplacer(Position position)
         {
-            MoveTo(position.Ligne, position.Colonne);
+            if (ValiderDeplacement(position) == true)
+            {
+            } 
         }
 
-        public bool ValiderDeplacement()
+        public bool ValiderDeplacement(Position position)
         {
             return false;
         }

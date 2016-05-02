@@ -1,56 +1,40 @@
 ﻿using JeuEchec.Librairie.Pieces;
+using System;
 using System.Collections.Generic;
 
 namespace JeuEchec.Librairie
 {
     public class Joueur
     {
-        public Couleurs Couleur
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Propriétés
 
-            set
-            {
-            }
+        public string Nom { get; private set; }
+
+        public Couleurs Couleur { get; private set; }
+
+        public IEnumerable<Piece> Pieces { get; private set; }
+
+        public IEnumerable<Piece> PiecesManges { get; private set; }
+
+        #endregion
+
+        #region Constructeurs
+
+        public Joueur(string nom, Couleurs couleur)
+        {
+            Nom = nom;
+            Couleur = couleur;
         }
 
-        public List<Piece> Pieces
+        public Joueur(string nom, Couleurs couleur, Piece[] pieces) : this(nom, couleur)
         {
-            get
+            foreach (var piece in pieces)
             {
-                throw new System.NotImplementedException();
+                if (piece.Couleur != Couleur) throw new Exception();
             }
-
-            set
-            {
-            }
+            Pieces = pieces;
         }
 
-        public List<Piece> PiecesManges
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public string Nom
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        #endregion
     }
 }
