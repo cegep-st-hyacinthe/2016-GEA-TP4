@@ -23,6 +23,11 @@ namespace JeuEchec.Librairie.Pieces
             Image = Couleur == Couleurs.Blanc ? imageBlanc : imageNoir;
         }
 
+        public Piece(Position position, Couleurs couleur, bool visible) : this(position, couleur)
+        {
+            Visible = visible;
+        }
+
         #endregion
 
         #region Méthodes
@@ -31,7 +36,7 @@ namespace JeuEchec.Librairie.Pieces
         {
             if (ValiderDeplacement(position) == true)
             {
-            } 
+            }
         }
 
         public bool ValiderDeplacement(Position position)

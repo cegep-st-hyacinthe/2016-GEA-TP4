@@ -59,6 +59,10 @@ namespace JeuEchec
                 new Cavalier(new Position(6, 7), Couleurs.Noir),
                 new Tour(new Position(7, 7), Couleurs.Noir),
             });
+            _echiquier.AjouterPieces(new Piece[]
+            {
+                new Pion(new Position(0, 0), Couleurs.Blanc),
+            });
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)
