@@ -17,7 +17,7 @@ namespace JeuEchec.Librairie.Pieces
 
         public Piece(Position position, Couleurs couleur)
         {
-            DisplayIndex = 4;
+            DisplayIndex = position.Index;
             Couleur = couleur;
             Size = new Size(50, 50);
             Image = Couleur == Couleurs.Blanc ? imageBlanc : imageNoir;
@@ -29,7 +29,7 @@ namespace JeuEchec.Librairie.Pieces
 
         public void Deplacer(Position position)
         {
-            //MoveTo(position.Ligne, position.Colonne);
+            MoveTo(position.Ligne, position.Colonne);
         }
 
         public bool ValiderDeplacement()

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    public class Pion : Piece
+    class Tour : Piece
     {
         #region Propriétés
 
-        protected override Image imageBlanc { get { return Properties.Resources.blanc_pion; } }
-        protected override Image imageNoir { get { return Properties.Resources.noir_pion; } }
+        protected override Image imageBlanc { get { return Properties.Resources.blanc_fou; } }
+        protected override Image imageNoir { get { return Properties.Resources.noir_fou; } }
 
         #endregion
 
         #region Constructeurs
 
-        public Pion(Position position, Couleurs couleur) : base(position, couleur)
+        public Tour(Position position, Couleurs couleur) : base(position, couleur)
         {
 
         }
