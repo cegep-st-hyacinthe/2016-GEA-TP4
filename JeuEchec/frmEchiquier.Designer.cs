@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEchiquier));
             this.viaEchiquier = new VisualArrays.VisualIntArray();
             this.imlCases = new System.Windows.Forms.ImageList(this.components);
-            this.imageSprite1 = new VisualArrays.ImageSprite();
             this.mnuGeneral = new System.Windows.Forms.MenuStrip();
             this.mnuPartie = new System.Windows.Forms.ToolStripMenuItem();
             this.itmReinitialiser = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,11 +59,8 @@
             this.viaEchiquier.RowHeader.ForeColor = System.Drawing.Color.White;
             this.viaEchiquier.SelectionMode = System.Windows.Forms.SelectionMode.One;
             this.viaEchiquier.Size = new System.Drawing.Size(644, 644);
-            this.viaEchiquier.Sprites.AddRange(new VisualArrays.Sprite[] {
-            this.imageSprite1});
             this.viaEchiquier.TabIndex = 0;
             this.viaEchiquier.View = VisualArrays.enuIntView.ImageList;
-            this.viaEchiquier.Load += new System.EventHandler(this.viaEchiquier_Load);
             // 
             // imlCases
             // 
@@ -72,11 +68,6 @@
             this.imlCases.TransparentColor = System.Drawing.Color.Transparent;
             this.imlCases.Images.SetKeyName(0, "case_blanche.png");
             this.imlCases.Images.SetKeyName(1, "case_noir.png");
-            // 
-            // imageSprite1
-            // 
-            this.imageSprite1.Image = global::JeuEchec.Properties.Resources.blanc_cavalier;
-            this.imageSprite1.Name = "imageSprite1";
             // 
             // mnuGeneral
             // 
@@ -140,6 +131,7 @@
             this.Name = "frmEchiquier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jeu d\'échec - déplacement de pièces";
+            this.Load += new System.EventHandler(this.frmEchiquier_Load);
             this.mnuGeneral.ResumeLayout(false);
             this.mnuGeneral.PerformLayout();
             this.ResumeLayout(false);
@@ -157,7 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem itmQuitter;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem itmAfficherBlancs;
-        private VisualArrays.ImageSprite imageSprite1;
     }
 }
 

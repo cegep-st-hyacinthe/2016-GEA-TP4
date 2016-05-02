@@ -1,4 +1,5 @@
-﻿using JeuEchec.Librarie;
+﻿using JeuEchec.Librairie;
+using JeuEchec.Librairie.Pieces;
 using System;
 using System.Windows.Forms;
 
@@ -27,9 +28,6 @@ namespace JeuEchec
         public frmEchiquier()
         {
             InitializeComponent();
-
-            _echiquier = (Echiquier)viaEchiquier;
-
         }
 
         #endregion
@@ -40,9 +38,12 @@ namespace JeuEchec
 
         #region Événements
 
-        private void viaEchiquier_Load(object sender, EventArgs e)
+        private void frmEchiquier_Load(object sender, EventArgs e)
         {
-            _echiquier.AfficherCases();
+            _echiquier = new Echiquier(viaEchiquier, new Piece[]
+            {
+                new Pion(new Position(2, 2), Couleurs.Noir)
+            });
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)

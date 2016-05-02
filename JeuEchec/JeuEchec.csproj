@@ -54,15 +54,19 @@
     <Compile Include="frmEchiquier.Designer.cs">
       <DependentUpon>frmEchiquier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Librarie\Couleurs.cs" />
-    <Compile Include="Librarie\Echiquier.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Librarie\Joueur.cs" />
-    <Compile Include="Librarie\Pieces\Piece.cs">
+    <Compile Include="Librairie\Couleurs.cs" />
+    <Compile Include="Librairie\Echiquier.cs" />
+    <Compile Include="Librairie\Joueur.cs" />
+    <Compile Include="Librairie\Pieces\Fou.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Librarie\Position.cs" />
+    <Compile Include="Librairie\Pieces\Piece.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Librairie\Pieces\Pion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Librairie\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEchiquier.resx">
