@@ -19,7 +19,7 @@ namespace JeuEchec.Librairie.Pieces
         {
             DisplayIndex = position.Index;
             Couleur = couleur;
-            Size = new Size(50, 50);
+            Size = new Size(75, 75);
             Image = Couleur == Couleurs.Blanc ? imageBlanc : imageNoir;
         }
 

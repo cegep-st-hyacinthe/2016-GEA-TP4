@@ -116,6 +116,7 @@
             this.itmAfficherBlancs.Name = "itmAfficherBlancs";
             this.itmAfficherBlancs.Size = new System.Drawing.Size(170, 22);
             this.itmAfficherBlancs.Text = "Afficher les blancs";
+            this.itmAfficherBlancs.Click += new System.EventHandler(this.itmAfficherBlancs_Click);
             // 
             // frmEchiquier
             // 
