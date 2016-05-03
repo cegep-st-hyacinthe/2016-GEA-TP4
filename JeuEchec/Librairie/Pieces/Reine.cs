@@ -23,6 +23,11 @@ namespace JeuEchec.Librairie.Pieces
 
         }
 
+        public Reine(Position position, Couleurs couleur, bool visible) : base(position, couleur, visible)
+        {
+
+        }
+
         #endregion
 
         #region Méthodes
