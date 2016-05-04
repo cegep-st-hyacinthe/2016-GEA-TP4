@@ -11,8 +11,9 @@ namespace JeuEchec.Librairie.Pieces
     {
         #region Propriétés
 
-        protected override Image imageBlanc { get { return Properties.Resources.blanc_fou; } }
-        protected override Image imageNoir { get { return Properties.Resources.noir_fou; } }
+        protected new Image imageBlanc { get { return Properties.Resources.blanc_fou; } }
+
+        protected new Image imageNoir { get { return Properties.Resources.noir_fou; } }
 
         #endregion
 
@@ -32,10 +33,7 @@ namespace JeuEchec.Librairie.Pieces
 
         #region Méthodes
 
-        public override Position[] ObtenirPosibilites()
-        {
-            throw new NotImplementedException();
-        }
+
 
         #endregion
     }

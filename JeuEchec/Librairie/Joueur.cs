@@ -1,6 +1,7 @@
 ﻿using JeuEchec.Librairie.Pieces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JeuEchec.Librairie
 {
@@ -12,10 +13,6 @@ namespace JeuEchec.Librairie
 
         public Couleurs Couleur { get; private set; }
 
-        public IEnumerable<Piece> Pieces { get; private set; }
-
-        public IEnumerable<Piece> PiecesManges { get; private set; }
-
         #endregion
 
         #region Constructeurs
@@ -26,13 +23,16 @@ namespace JeuEchec.Librairie
             Couleur = couleur;
         }
 
-        public Joueur(string nom, Couleurs couleur, Piece[] pieces) : this(nom, couleur)
+        #endregion
+
+        #region Méthodes
+
+        public void DeplacerPiece(Piece piece)
         {
-            foreach (var piece in pieces)
+            if (piece.Couleur == Couleur)
             {
-                if (piece.Couleur != Couleur) throw new Exception();
+
             }
-            Pieces = pieces;
         }
 
         #endregion

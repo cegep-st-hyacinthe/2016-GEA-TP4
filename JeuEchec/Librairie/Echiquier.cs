@@ -30,7 +30,15 @@ namespace JeuEchec.Librairie
 
         #region Indexeurs
 
-        public Piece this[Position position] { get { return Pieces.Where(x => x.DisplayIndex == position.Index).First(); } }
+        public Piece this[Position position]
+        {
+            get
+            {
+                return Pieces
+                    .Where(x => x.DisplayIndex == position.Index && x.Visible)
+                    .FirstOrDefault();
+            }
+        }
 
         #endregion
 
@@ -59,12 +67,22 @@ namespace JeuEchec.Librairie
 
         public Echiquier(VisualIntArray tableau, Piece[] pieces) : this(tableau)
         {
+            foreach (Piece piece in pieces)
+            {
+                piece.Echichier = this;
+            }
+
             _tableau.Sprites.AddRange(pieces);
         }
 
         #endregion
 
         #region Méthodes
+
+        public Position[] ObtenirPositions(Deplacement deplacement)
+        {
+            return null;
+        }
 
         #endregion
     }

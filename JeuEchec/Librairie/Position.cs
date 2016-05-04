@@ -25,6 +25,8 @@ namespace JeuEchec.Librairie
 
         #region Propriétés
 
+        public int Index { get { return Echiquier.NB_COLONNES * Colonne + Ligne; } }
+
         public int Ligne
         {
             get
@@ -38,6 +40,7 @@ namespace JeuEchec.Librairie
                 _ligne = value;
             }
         }
+
         public int Colonne
         {
             get
@@ -49,14 +52,6 @@ namespace JeuEchec.Librairie
                 if (value > Echiquier.NB_COLONNES) throw new Exception();
 
                 _colonne = value;
-            }
-        }
-
-        public int Index
-        {
-            get
-            {
-                return Echiquier.NB_COLONNES * Colonne + Ligne;
             }
         }
 

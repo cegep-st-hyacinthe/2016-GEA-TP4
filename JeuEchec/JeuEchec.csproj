@@ -55,6 +55,7 @@
       <DependentUpon>frmEchiquier.cs</DependentUpon>
     </Compile>
     <Compile Include="Librairie\Couleurs.cs" />
+    <Compile Include="Librairie\Deplacement.cs" />
     <Compile Include="Librairie\Echiquier.cs" />
     <Compile Include="Librairie\Joueur.cs" />
     <Compile Include="Librairie\Pieces\Cavalier.cs">

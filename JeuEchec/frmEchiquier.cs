@@ -77,6 +77,8 @@ namespace JeuEchec
                 new Cavalier(new Position('G', 8), Couleurs.Blanc, false),
                 new Tour(new Position('H', 8), Couleurs.Blanc, false),
             });
+
+            Piece piece = _echiquier[new Position('D', 5)];
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)

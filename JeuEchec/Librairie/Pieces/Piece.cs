@@ -1,15 +1,63 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Linq;
 using VisualArrays;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    public abstract class Piece : ImageSprite
+    public class Piece : ImageSprite
     {
+        #region Champs
+
+        private Echiquier _echiquier;
+        private bool _mange;
+
+        #endregion
+
         #region Propriétés
 
         public Couleurs Couleur { get; }
-        protected abstract Image imageBlanc { get; }
-        protected abstract Image imageNoir { get; }
+
+        protected Image imageBlanc { get; }
+
+        protected Image imageNoir { get; }
+
+        public Echiquier Echichier
+        {
+            get
+            {
+                return _echiquier;
+            }
+            set
+            {
+                if (_echiquier != null)
+                {
+                    _echiquier = value;
+                }
+            }
+        }
+
+        public bool Mange
+        {
+            get
+            {
+                return _mange;
+            }
+            set
+            {
+                Visible = false;
+
+                _mange = value;
+            }
+        }
+
+        public Deplacement[] DeplacementsPermis
+        {
+            get
+            {
+                return null;
+            }
+        }
 
         #endregion
 
@@ -32,19 +80,36 @@ namespace JeuEchec.Librairie.Pieces
 
         #region Méthodes
 
-        public void Deplacer(Position position)
+        public void DeplacerVers(Position positionFinale)
         {
-            if (ValiderDeplacement(position) == true)
+            Position[] deplacement = TrouverDeplacement(positionFinale);
+
+            if (deplacement != null && deplacement.Length > 0)
             {
+                foreach(Position position in deplacement)
+                {
+                    MoveTo(position.Ligne, position.Colonne);
+
+                    if (DisplayIndex == positionFinale.Index) return;
+                }
             }
         }
 
-        public bool ValiderDeplacement(Position position)
+        private Position[] TrouverDeplacement(Position positionFinale)
         {
-            return false;
-        }
+            foreach (Deplacement deplacement in DeplacementsPermis)
+            {
+                Position[] positionsPossibles = Echichier.ObtenirPositions(deplacement);
 
-        public abstract Position[] ObtenirPosibilites();
+                // Si la position est contenu dans les positions possibles 
+                if (positionsPossibles != null || Array.IndexOf(positionsPossibles, positionFinale) >= 0)
+                {
+                    // On a trouvé un déplacement valide
+                    return positionsPossibles;
+                }
+            }
+            return null;
+        }
 
         #endregion
     }
