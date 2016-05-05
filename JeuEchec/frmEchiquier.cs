@@ -81,7 +81,7 @@ namespace JeuEchec
 
         private void viaEchiquier_SpriteDragAndDropOccured(object sender, VisualArrays.SpriteDragAndDropEventArgs e)
         {
-            (_echiquier[e.SourceIndex]).DeplacerVers(new Position(e.DestinationAddress.Row, e.DestinationAddress.Column));
+            (_echiquier[e.SourceAddress.Row, e.SourceAddress.Column]).DeplacerVers(new Position(e.DestinationAddress.Row, e.DestinationAddress.Column));
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)

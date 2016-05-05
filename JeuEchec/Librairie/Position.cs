@@ -33,7 +33,7 @@ namespace JeuEchec.Librairie
             {
                 return _ligne;
             }
-            private set
+            set
             {
                 if (value > Echiquier.NB_LIGNES) throw new Exception();
 
@@ -47,7 +47,7 @@ namespace JeuEchec.Librairie
             {
                 return _colonne;
             }
-            private set
+            set
             {
                 if (value > Echiquier.NB_COLONNES) throw new Exception();
 

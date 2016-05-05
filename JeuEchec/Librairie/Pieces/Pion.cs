@@ -15,6 +15,8 @@ namespace JeuEchec.Librairie.Pieces
 
         protected override Image imageNoir { get { return Properties.Resources.noir_pion; } }
 
+        public override Deplacement[] DeplacementsPermis { get { return null; } }
+
         #endregion
 
         #region Constructeurs

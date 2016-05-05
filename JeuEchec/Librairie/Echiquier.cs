@@ -30,12 +30,12 @@ namespace JeuEchec.Librairie
 
         #region Indexeurs
 
-        public Piece this[int index]
+        public Piece this[int ligne, int colonne]
         {
             get
             {
                 return Pieces
-                    .Where(x => x.DisplayIndex == index && x.Visible)
+                    .Where(x => x.DisplayAddress.Row == ligne && x.DisplayAddress.Column == colonne && x.Visible)
                     .FirstOrDefault();
             }
         }
@@ -92,9 +92,37 @@ namespace JeuEchec.Librairie
 
         #region Méthodes
 
-        public Position[] ObtenirPositions(Deplacement deplacement)
+        public Position[] ObtenirPositions(Piece piece, Deplacement deplacement)
         {
-            return null;
+            List<Position> positions = new List<Position>();
+            Position positionObservee = new Position(piece.DisplayAddress.Row, piece. DisplayAddress.Column);
+            Piece pieceObservee;
+            int distanceParcourue;
+
+            foreach (var vecteur in deplacement.Vecteurs)
+            {
+                // Distance parcourue par le vecteur observé
+                distanceParcourue = 0;
+
+                // Observe toutes les positions du vecteur
+                do
+                {
+                    positionObservee.Ligne += (int)(vecteur.DirectionHorizontale);
+                    positionObservee.Colonne += (int)(vecteur.DirectionVerticale);
+                    pieceObservee = this[positionObservee];
+                }
+                // Tant que la distance n'est pas atteinte et qu'une pièce ne nous bloque pas le chemin quand les obstacles ne sont pas ignorés 
+                while (distanceParcourue <= vecteur.Distance && pieceObservee == null || deplacement.IgnorerObstacles);
+
+                // Si la case est vide ou qu'elle contient une pièce ennemie
+                if (pieceObservee == null || pieceObservee != null && pieceObservee.Couleur != piece.Couleur)
+                {
+                    // Ajoute la postion dans les positions possibles
+                    positions.Add(positionObservee);
+                }
+            }
+
+            return positions.Count() > 0 ? positions.ToArray() : null;
         }
 
         public void Rafraichir()

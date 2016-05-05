@@ -18,6 +18,8 @@ namespace JeuEchec.Librairie.Pieces
 
         public Couleurs Couleur { get; }
 
+        public abstract Deplacement[] DeplacementsPermis { get; }
+
         protected abstract Image imageBlanc { get; }
 
         protected abstract Image imageNoir { get; }
@@ -51,13 +53,6 @@ namespace JeuEchec.Librairie.Pieces
             }
         }
 
-        public Deplacement[] DeplacementsPermis
-        {
-            get
-            {
-                return null;
-            }
-        }
 
         #endregion
 
@@ -101,7 +96,7 @@ namespace JeuEchec.Librairie.Pieces
         {
             foreach (Deplacement deplacement in DeplacementsPermis)
             {
-                Position[] positionsPossibles = Echichier.ObtenirPositions(deplacement);
+                Position[] positionsPossibles = Echichier.ObtenirPositions(this, deplacement);
 
                 // Si la position est contenu dans les positions possibles 
                 if (positionsPossibles != null || Array.IndexOf(positionsPossibles, positionFinale) >= 0)
