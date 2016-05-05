@@ -30,6 +30,16 @@ namespace JeuEchec.Librairie
 
         #region Indexeurs
 
+        public Piece this[int index]
+        {
+            get
+            {
+                return Pieces
+                    .Where(x => x.DisplayIndex == index && x.Visible)
+                    .FirstOrDefault();
+            }
+        }
+
         public Piece this[Position position]
         {
             get
@@ -69,6 +79,9 @@ namespace JeuEchec.Librairie
         {
             foreach (Piece piece in pieces)
             {
+                // Si il existe déjà une pièce à cette position
+                if (this[piece.DisplayIndex] != null) throw new Exception();
+
                 piece.Echichier = this;
             }
 
@@ -82,6 +95,11 @@ namespace JeuEchec.Librairie
         public Position[] ObtenirPositions(Deplacement deplacement)
         {
             return null;
+        }
+
+        public void Rafraichir()
+        {
+            _tableau.Refresh();
         }
 
         #endregion

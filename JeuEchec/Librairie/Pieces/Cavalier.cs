@@ -11,9 +11,9 @@ namespace JeuEchec.Librairie.Pieces
     {
         #region Propriétés
 
-        protected new Image imageBlanc { get { return Properties.Resources.blanc_cavalier; } }
+        protected override Image imageBlanc { get { return Properties.Resources.blanc_cavalier; } }
 
-        protected new Image imageNoir { get { return Properties.Resources.noir_cavalier; } }
+        protected override Image imageNoir { get { return Properties.Resources.noir_cavalier; } }
 
         #endregion
 

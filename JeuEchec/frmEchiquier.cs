@@ -77,8 +77,11 @@ namespace JeuEchec
                 new Cavalier(new Position('G', 8), Couleurs.Blanc, false),
                 new Tour(new Position('H', 8), Couleurs.Blanc, false),
             });
+        }
 
-            Piece piece = _echiquier[new Position('D', 5)];
+        private void viaEchiquier_SpriteDragAndDropOccured(object sender, VisualArrays.SpriteDragAndDropEventArgs e)
+        {
+            (_echiquier[e.SourceIndex]).DeplacerVers(new Position(e.DestinationAddress.Row, e.DestinationAddress.Column));
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)
@@ -90,11 +93,11 @@ namespace JeuEchec
 
         private void itmAfficherBlancs_Click(object sender, EventArgs e)
         {
-            // BUG: Marche pas ici, mais marche dans l'événement load du formulaire.
             foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc))
             {
                 piece.Visible = true;
             }
+            _echiquier.Rafraichir();
         }
     }
 }

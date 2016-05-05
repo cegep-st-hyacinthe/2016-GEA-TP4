@@ -61,6 +61,7 @@
             this.viaEchiquier.Size = new System.Drawing.Size(644, 644);
             this.viaEchiquier.TabIndex = 0;
             this.viaEchiquier.View = VisualArrays.enuIntView.ImageList;
+            this.viaEchiquier.SpriteDragAndDropOccured += new System.EventHandler<VisualArrays.SpriteDragAndDropEventArgs>(this.viaEchiquier_SpriteDragAndDropOccured);
             // 
             // imlCases
             // 

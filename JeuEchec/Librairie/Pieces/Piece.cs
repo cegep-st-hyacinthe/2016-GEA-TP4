@@ -5,7 +5,7 @@ using VisualArrays;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    public class Piece : ImageSprite
+    public abstract class Piece : ImageSprite
     {
         #region Champs
 
@@ -18,9 +18,9 @@ namespace JeuEchec.Librairie.Pieces
 
         public Couleurs Couleur { get; }
 
-        protected Image imageBlanc { get; }
+        protected abstract Image imageBlanc { get; }
 
-        protected Image imageNoir { get; }
+        protected abstract Image imageNoir { get; }
 
         public Echiquier Echichier
         {
@@ -68,6 +68,8 @@ namespace JeuEchec.Librairie.Pieces
             DisplayIndex = position.Index;
             Couleur = couleur;
             Size = new Size(75, 75);
+            Animated = true;
+            AllowDrag = true;
             Image = Couleur == Couleurs.Blanc ? imageBlanc : imageNoir;
         }
 
@@ -86,7 +88,7 @@ namespace JeuEchec.Librairie.Pieces
 
             if (deplacement != null && deplacement.Length > 0)
             {
-                foreach(Position position in deplacement)
+                foreach (Position position in deplacement)
                 {
                     MoveTo(position.Ligne, position.Colonne);
 
