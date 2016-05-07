@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using VisualArrays;
@@ -32,7 +33,7 @@ namespace JeuEchec.Librairie.Pieces
             }
             set
             {
-                if (_echiquier != null)
+                if (_echiquier == null && value != null)
                 {
                     _echiquier = value;
                 }
@@ -87,7 +88,7 @@ namespace JeuEchec.Librairie.Pieces
                 {
                     MoveTo(position.Ligne, position.Colonne);
 
-                    if (DisplayIndex == positionFinale.Index) return;
+                    if (DisplayAddress.Row == positionFinale.Ligne && DisplayAddress.Column == positionFinale.Colonne) return;
                 }
             }
         }
@@ -96,13 +97,13 @@ namespace JeuEchec.Librairie.Pieces
         {
             foreach (Deplacement deplacement in DeplacementsPermis)
             {
-                Position[] positionsPossibles = Echichier.ObtenirPositions(this, deplacement);
+                List<Position> positionsPossibles = Echichier.ObtenirPositions(this, deplacement);
 
-                // Si la position est contenu dans les positions possibles 
-                if (positionsPossibles != null || Array.IndexOf(positionsPossibles, positionFinale) >= 0)
+                // Si la position finale est contenu dans les positions possibles 
+                if (positionsPossibles.Find(x => x.Ligne == positionFinale.Ligne && x.Colonne == positionFinale.Colonne) != null)
                 {
                     // On a trouvé un déplacement valide
-                    return positionsPossibles;
+                    return positionsPossibles.ToArray();
                 }
             }
             return null;

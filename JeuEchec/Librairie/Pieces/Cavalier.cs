@@ -15,7 +15,55 @@ namespace JeuEchec.Librairie.Pieces
 
         protected override Image imageNoir { get { return Properties.Resources.noir_cavalier; } }
 
-        public override Deplacement[] DeplacementsPermis { get { return null; } }
+        public override Deplacement[] DeplacementsPermis
+        {
+            get
+            {
+                return new Deplacement[]
+                {
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Haut, 1),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche, 2),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Haut, 2),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche, 1),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Haut, 2),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite, 1),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Haut, 1),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite, 2),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Bas, 1),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite, 2),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Bas, 2),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite, 1),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Bas, 2),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche, 1),
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Bas, 1),
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche, 2),
+                    }),
+                };
+            }
+        }
 
         #endregion
 
@@ -34,8 +82,6 @@ namespace JeuEchec.Librairie.Pieces
         #endregion
 
         #region Méthodes
-
-
 
         #endregion
     }

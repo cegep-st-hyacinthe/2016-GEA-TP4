@@ -43,14 +43,6 @@ namespace JeuEchec
         {
             _echiquier = new Echiquier(viaEchiquier, new Piece[]
             {
-                new Pion(new Position('A', 2), Couleurs.Noir),
-                new Pion(new Position('B', 2), Couleurs.Noir),
-                new Pion(new Position('C', 2), Couleurs.Noir),
-                new Pion(new Position('D', 2), Couleurs.Noir),
-                new Pion(new Position('E', 2), Couleurs.Noir),
-                new Pion(new Position('F', 2), Couleurs.Noir),
-                new Pion(new Position('G', 2), Couleurs.Noir),
-                new Pion(new Position('H', 2), Couleurs.Noir),
                 new Tour(new Position('A', 1), Couleurs.Noir),
                 new Cavalier(new Position('B', 1), Couleurs.Noir),
                 new Fou(new Position('C', 1), Couleurs.Noir),
@@ -59,15 +51,15 @@ namespace JeuEchec
                 new Fou(new Position('F', 1), Couleurs.Noir),
                 new Cavalier(new Position('G', 1), Couleurs.Noir),
                 new Tour(new Position('H', 1), Couleurs.Noir),
+                new Pion(new Position('A', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('B', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('C', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('D', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('E', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('F', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('G', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
+                new Pion(new Position('H', 2), Couleurs.Noir, Vecteur.DirectionsVerticales.Haut),
 
-                new Pion(new Position('A', 7), Couleurs.Blanc, false),
-                new Pion(new Position('B', 7), Couleurs.Blanc, false),
-                new Pion(new Position('C', 7), Couleurs.Blanc, false),
-                new Pion(new Position('D', 7), Couleurs.Blanc, false),
-                new Pion(new Position('E', 7), Couleurs.Blanc, false),
-                new Pion(new Position('F', 7), Couleurs.Blanc, false),
-                new Pion(new Position('G', 7), Couleurs.Blanc, false),
-                new Pion(new Position('H', 7), Couleurs.Blanc, false),
                 new Tour(new Position('A', 8), Couleurs.Blanc, false),
                 new Cavalier(new Position('B', 8), Couleurs.Blanc, false),
                 new Fou(new Position('C', 8), Couleurs.Blanc, false),
@@ -76,6 +68,14 @@ namespace JeuEchec
                 new Fou(new Position('F', 8), Couleurs.Blanc, false),
                 new Cavalier(new Position('G', 8), Couleurs.Blanc, false),
                 new Tour(new Position('H', 8), Couleurs.Blanc, false),
+                new Pion(new Position('A', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('B', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('C', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('D', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('E', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('F', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('G', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
+                new Pion(new Position('H', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
             });
         }
 

@@ -15,7 +15,31 @@ namespace JeuEchec.Librairie.Pieces
 
         protected override Image imageNoir { get { return Properties.Resources.noir_tour; } }
 
-        public override Deplacement[] DeplacementsPermis { get { return null; } }
+        public override Deplacement[] DeplacementsPermis
+        {
+            get
+            {
+                return new Deplacement[]
+                {
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Haut)
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite)
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsVerticales.Bas)
+                    }),
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche)
+                    }),
+                };
+            }
+        }
 
         #endregion
 
@@ -34,7 +58,6 @@ namespace JeuEchec.Librairie.Pieces
         #endregion
 
         #region Méthodes
-
 
 
         #endregion

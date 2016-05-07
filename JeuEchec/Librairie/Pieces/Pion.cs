@@ -15,27 +15,39 @@ namespace JeuEchec.Librairie.Pieces
 
         protected override Image imageNoir { get { return Properties.Resources.noir_pion; } }
 
-        public override Deplacement[] DeplacementsPermis { get { return null; } }
+        public Vecteur.DirectionsVerticales DirectionVerticale { get; private set; }
+
+        public override Deplacement[] DeplacementsPermis
+        {
+            get
+            {
+                return new Deplacement[]
+                {
+                    new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(DirectionVerticale, 1)
+                    })
+                };
+            }
+        }
 
         #endregion
 
         #region Constructeurs
 
-        public Pion(Position position, Couleurs couleur) : base(position, couleur)
+        public Pion(Position position, Couleurs couleur, Vecteur.DirectionsVerticales directionVerticale) : base(position, couleur)
         {
-
+            DirectionVerticale = directionVerticale;
         }
 
-        public Pion(Position position, Couleurs couleur, bool visible) : base(position, couleur, visible)
+        public Pion(Position position, Couleurs couleur, Vecteur.DirectionsVerticales directionVerticale, bool visible) : base(position, couleur, visible)
         {
-
+            DirectionVerticale = directionVerticale;
         }
 
         #endregion
 
         #region Méthodes
-
-
 
         #endregion
     }

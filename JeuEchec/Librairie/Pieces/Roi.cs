@@ -35,8 +35,6 @@ namespace JeuEchec.Librairie.Pieces
 
         #region Méthodes
 
-
-
         #endregion
     }
 }

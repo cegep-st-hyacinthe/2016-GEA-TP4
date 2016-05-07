@@ -12,8 +12,8 @@ namespace JeuEchec.Librairie
 
         public enum DirectionsHorizontales
         {
-           Gauche = -1,
-           Droite = 1
+            Gauche = -1,
+            Droite = 1
         }
 
         public enum DirectionsVerticales

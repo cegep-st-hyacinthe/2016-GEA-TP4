@@ -35,7 +35,7 @@ namespace JeuEchec.Librairie
             }
             set
             {
-                if (value > Echiquier.NB_LIGNES) throw new Exception();
+                if (!(0 <= value && value <= Echiquier.NB_LIGNES)) throw new Exception();
 
                 _ligne = value;
             }
@@ -49,7 +49,7 @@ namespace JeuEchec.Librairie
             }
             set
             {
-                if (value > Echiquier.NB_COLONNES) throw new Exception();
+                if (!(0 <= value && value <= Echiquier.NB_COLONNES)) throw new Exception();
 
                 _colonne = value;
             }

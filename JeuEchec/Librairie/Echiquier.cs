@@ -24,7 +24,7 @@ namespace JeuEchec.Librairie
 
         #region Propriétés
 
-        public IEnumerable<Piece> Pieces { get { return (_tableau.Sprites).Cast<Piece>(); } }
+        public List<Piece> Pieces { get { return (_tableau.Sprites).Cast<Piece>().ToList(); } }
 
         #endregion
 
@@ -34,9 +34,7 @@ namespace JeuEchec.Librairie
         {
             get
             {
-                return Pieces
-                    .Where(x => x.DisplayAddress.Row == ligne && x.DisplayAddress.Column == colonne && x.Visible)
-                    .FirstOrDefault();
+                return Pieces.Find(x => x.DisplayAddress.Row == ligne && x.DisplayAddress.Column == colonne && x.Visible);
             }
         }
 
@@ -44,9 +42,7 @@ namespace JeuEchec.Librairie
         {
             get
             {
-                return Pieces
-                    .Where(x => x.DisplayIndex == position.Index && x.Visible)
-                    .FirstOrDefault();
+                return Pieces.Find(x => x.DisplayAddress.Row == position.Ligne && x.DisplayAddress.Column == position.Colonne && x.Visible);
             }
         }
 
@@ -80,7 +76,7 @@ namespace JeuEchec.Librairie
             foreach (Piece piece in pieces)
             {
                 // Si il existe déjà une pièce à cette position
-                if (this[piece.DisplayIndex] != null) throw new Exception();
+                if (this[piece.DisplayAddress.Row, piece.DisplayAddress.Column] != null) throw new Exception();
 
                 piece.Echichier = this;
             }
@@ -92,37 +88,35 @@ namespace JeuEchec.Librairie
 
         #region Méthodes
 
-        public Position[] ObtenirPositions(Piece piece, Deplacement deplacement)
+        public List<Position> ObtenirPositions(Piece piece, Deplacement deplacement)
         {
             List<Position> positions = new List<Position>();
-            Position positionObservee = new Position(piece.DisplayAddress.Row, piece. DisplayAddress.Column);
-            Piece pieceObservee;
-            int distanceParcourue;
+            int ligneObservee = piece.DisplayAddress.Row;
+            int colonneObservee = piece.DisplayAddress.Column;
 
             foreach (var vecteur in deplacement.Vecteurs)
             {
-                // Distance parcourue par le vecteur observé
-                distanceParcourue = 0;
+                int distanceParcourue = 0;
 
-                // Observe toutes les positions du vecteur
-                do
+                while(distanceParcourue < vecteur.Distance || vecteur.Distance == -1)
                 {
-                    positionObservee.Ligne += (int)(vecteur.DirectionHorizontale);
-                    positionObservee.Colonne += (int)(vecteur.DirectionVerticale);
-                    pieceObservee = this[positionObservee];
-                }
-                // Tant que la distance n'est pas atteinte et qu'une pièce ne nous bloque pas le chemin quand les obstacles ne sont pas ignorés 
-                while (distanceParcourue <= vecteur.Distance && pieceObservee == null || deplacement.IgnorerObstacles);
+                    ligneObservee += (int)(vecteur.DirectionVerticale);
+                    colonneObservee += (int)(vecteur.DirectionHorizontale);
 
-                // Si la case est vide ou qu'elle contient une pièce ennemie
-                if (pieceObservee == null || pieceObservee != null && pieceObservee.Couleur != piece.Couleur)
-                {
-                    // Ajoute la postion dans les positions possibles
-                    positions.Add(positionObservee);
+                    try
+                    {
+                        positions.Add(new Position(ligneObservee, colonneObservee));
+                    }
+                    catch (Exception)
+                    {
+                        break;
+                    }
+
+                    distanceParcourue++;
                 }
             }
 
-            return positions.Count() > 0 ? positions.ToArray() : null;
+            return positions;
         }
 
         public void Rafraichir()
