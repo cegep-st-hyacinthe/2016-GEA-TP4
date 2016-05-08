@@ -66,6 +66,7 @@ namespace JeuEchec.Librairie.Pieces
             Size = new Size(75, 75);
             Animated = true;
             AllowDrag = true;
+            Duration = 300;
             Image = Couleur == Couleurs.Blanc ? imageBlanc : imageNoir;
         }
 
@@ -88,6 +89,7 @@ namespace JeuEchec.Librairie.Pieces
                 {
                     MoveTo(position.Ligne, position.Colonne);
 
+                    // Arrête le déplacement lorsqu'on atteind la position finale
                     if (DisplayAddress.Row == positionFinale.Ligne && DisplayAddress.Column == positionFinale.Colonne) return;
                 }
             }

@@ -98,20 +98,26 @@ namespace JeuEchec.Librairie
             {
                 int distanceParcourue = 0;
 
+                // Tant qu'on ne parcourt pas la même distance que la distance du vecteur
                 while(distanceParcourue < vecteur.Distance || vecteur.Distance == -1)
                 {
+                    // Observe la prochaine ligne
                     ligneObservee += (int)(vecteur.DirectionVerticale);
+                    // Observe la prochaine colonne
                     colonneObservee += (int)(vecteur.DirectionHorizontale);
 
                     try
                     {
+                        // Crée une position sur la ligne et la colonne observée et l'ajoute à la liste de positons
                         positions.Add(new Position(ligneObservee, colonneObservee));
                     }
+                    // Quand la création de la position renvoie une erreur
                     catch (Exception)
                     {
+                        // Arrête l'exécution de la boucle
                         break;
                     }
-
+                    // Ajoute 1 à la distance parcourue
                     distanceParcourue++;
                 }
             }

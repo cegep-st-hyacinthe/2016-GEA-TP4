@@ -9,17 +9,9 @@ namespace JeuEchec.Librairie.Pieces
 {
     class Tour : Piece
     {
-        #region Propriétés
+        #region Champs
 
-        protected override Image imageBlanc { get { return Properties.Resources.blanc_tour; } }
-
-        protected override Image imageNoir { get { return Properties.Resources.noir_tour; } }
-
-        public override Deplacement[] DeplacementsPermis
-        {
-            get
-            {
-                return new Deplacement[]
+        private Deplacement[] _deplacementPermis = new Deplacement[]
                 {
                     new Deplacement(new Vecteur[]
                     {
@@ -38,8 +30,16 @@ namespace JeuEchec.Librairie.Pieces
                         new Vecteur(Vecteur.DirectionsHorizontales.Gauche)
                     }),
                 };
-            }
-        }
+
+        #endregion
+
+        #region Propriétés
+
+        protected override Image imageBlanc { get { return Properties.Resources.blanc_tour; } }
+
+        protected override Image imageNoir { get { return Properties.Resources.noir_tour; } }
+
+        public override Deplacement[] DeplacementsPermis { get { return _deplacementPermis; } }
 
         #endregion
 
