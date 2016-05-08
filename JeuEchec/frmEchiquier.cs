@@ -16,6 +16,10 @@ namespace JeuEchec
         #region Champs
 
         private Echiquier _echiquier;
+        private Echiquier _echiquierInitial;
+        private Joueur _joueurNoir = new Joueur("Joueur Noir", Couleurs.Noir);
+        private Joueur _joueurBlanc = new Joueur("Joueur Blanc", Couleurs.Blanc);
+        private Joueur _joueurCourant;
 
         #endregion
 
@@ -29,6 +33,8 @@ namespace JeuEchec
         public frmEchiquier()
         {
             InitializeComponent();
+
+            _joueurCourant = _joueurBlanc;
         }
 
         #endregion
@@ -77,11 +83,21 @@ namespace JeuEchec
                 new Pion(new Position('G', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
                 new Pion(new Position('H', 7), Couleurs.Blanc, Vecteur.DirectionsVerticales.Bas, false),
             });
+
+            _echiquierInitial = _echiquier.Cloner();
         }
 
         private void viaEchiquier_SpriteDragAndDropOccured(object sender, VisualArrays.SpriteDragAndDropEventArgs e)
         {
-            (_echiquier[e.SourceAddress.Row, e.SourceAddress.Column]).DeplacerVers(new Position(e.DestinationAddress.Row, e.DestinationAddress.Column));
+            bool deplacementValide = _joueurCourant.DeplacerPiece(
+                 _echiquier[e.SourceAddress.Row, e.SourceAddress.Column],
+                 new Position(e.DestinationAddress.Row, e.DestinationAddress.Column)
+                 );
+
+            if (deplacementValide)
+            {
+                _joueurCourant = _joueurCourant.Couleur == Couleurs.Blanc ? _joueurNoir : _joueurBlanc;
+            }
         }
 
         private void itmAfficherBlancs_CheckedChanged(object sender, EventArgs e)
@@ -96,7 +112,8 @@ namespace JeuEchec
         // À FAIRE
         private void itmReinitialiser_Click(object sender, EventArgs e)
         {
-            // ...
+            _echiquier = _echiquierInitial;
+            _echiquier.Rafraichir();
         }
 
         private void itmQuitter_Click(object sender, EventArgs e)

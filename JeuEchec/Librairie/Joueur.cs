@@ -27,12 +27,13 @@ namespace JeuEchec.Librairie
 
         #region Méthodes
 
-        public void DeplacerPiece(Piece piece)
+        public bool DeplacerPiece(Piece piece, Position position)
         {
             if (piece.Couleur == Couleur)
             {
-
+                return piece.DeplacerVers(position);               
             }
+            return false;
         }
 
         #endregion

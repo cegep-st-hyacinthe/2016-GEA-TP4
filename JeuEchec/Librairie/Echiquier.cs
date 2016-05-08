@@ -125,6 +125,11 @@ namespace JeuEchec.Librairie
             return positions;
         }
 
+        public Echiquier Cloner()
+        {
+            return (Echiquier)MemberwiseClone();
+        }
+
         public void Rafraichir()
         {
             _tableau.Refresh();

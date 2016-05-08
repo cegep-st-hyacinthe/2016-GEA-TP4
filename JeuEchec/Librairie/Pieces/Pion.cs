@@ -23,10 +23,16 @@ namespace JeuEchec.Librairie.Pieces
             {
                 List<Deplacement> deplacements = new List<Deplacement>();
 
-                deplacements.Add(new Deplacement(new Vecteur[]
+                // Contenu de la position en haut
+                Piece haut = Echichier[DisplayAddress.Row + (int)DirectionVerticale, DisplayAddress.Column ];
+                // Si la position est vide
+                if (haut == null)
                 {
+                    deplacements.Add(new Deplacement(new Vecteur[]
+                    {
                         new Vecteur(DirectionVerticale, 1)
-                }));
+                    }));
+                }
 
                 // Si le pion se trouve sur sa ligne de départ
                 if (DisplayAddress.Row == 1 || DisplayAddress.Row == Echiquier.NB_LIGNES - 2)

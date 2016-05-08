@@ -80,7 +80,7 @@ namespace JeuEchec.Librairie.Pieces
 
         #region Méthodes
 
-        public void DeplacerVers(Position positionFinale)
+        public bool DeplacerVers(Position positionFinale)
         {
             List<Position> deplacement = TrouverDeplacement(positionFinale);
             Piece pieceMangee = Echichier[positionFinale];
@@ -102,10 +102,11 @@ namespace JeuEchec.Librairie.Pieces
                         }
 
                         // Arrête le déplacement
-                        return;
+                        return true;
                     }
                 }
             }
+            return false;
         }
 
         public void Manger(Piece piece)
