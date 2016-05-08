@@ -40,7 +40,7 @@ namespace JeuEchec.Librairie.Pieces
 
                 // Contenu de la position en diagonale à gauche du pion
                 Piece diagonaleGauche = Echichier[DisplayAddress.Row + (int)DirectionVerticale, DisplayAddress.Column + (int)(Vecteur.DirectionsHorizontales.Gauche)];
-                // Si la position en diagonale à gauche du pion contient une pièce qui n'est pas de la même couleur
+                // Si la position en diagonale à gauche du pion contient une pièce ennemie
                 if (diagonaleGauche != null && diagonaleGauche.Couleur != Couleur)
                 {
                     // Il peut avancer en diagonale à gauche
@@ -52,7 +52,7 @@ namespace JeuEchec.Librairie.Pieces
 
                 // Contenu de la position en diagonale à droite du pion
                 Piece diagonaleDroite = Echichier[DisplayAddress.Row + (int)DirectionVerticale, DisplayAddress.Column + (int)(Vecteur.DirectionsHorizontales.Droite)];
-                // Si la position en diagonale à droite du pion contient une pièce qui n'est pas de la même couleur
+                // Si la position en diagonale à droite du pion contient une pièce ennemie
                 if (diagonaleDroite != null && diagonaleDroite.Couleur != Couleur)
                 {
                     // Il peut avancer en diagonale à droite

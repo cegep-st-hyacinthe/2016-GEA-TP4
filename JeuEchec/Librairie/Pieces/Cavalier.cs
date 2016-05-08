@@ -83,6 +83,11 @@ namespace JeuEchec.Librairie.Pieces
 
         #region Méthodes
 
+        protected override List<Position> LimiterDeplacement(List<Position> deplacement)
+        {
+            return deplacement;
+        }
+
         #endregion
     }
 }

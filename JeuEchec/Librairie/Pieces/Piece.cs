@@ -49,6 +49,7 @@ namespace JeuEchec.Librairie.Pieces
             set
             {
                 Visible = false;
+                Echichier.Rafraichir();
 
                 _mange = value;
             }
@@ -81,35 +82,82 @@ namespace JeuEchec.Librairie.Pieces
 
         public void DeplacerVers(Position positionFinale)
         {
-            Position[] deplacement = TrouverDeplacement(positionFinale);
+            List<Position> deplacement = TrouverDeplacement(positionFinale);
+            Piece pieceMangee = Echichier[positionFinale];
 
-            if (deplacement != null && deplacement.Length > 0)
+            if (deplacement != null && deplacement.Count > 0)
             {
                 foreach (Position position in deplacement)
                 {
                     MoveTo(position.Ligne, position.Colonne);
 
-                    // Arrête le déplacement lorsqu'on atteind la position finale
-                    if (DisplayAddress.Row == positionFinale.Ligne && DisplayAddress.Column == positionFinale.Colonne) return;
+                    // Si la position finale est atteinte
+                    if (DisplayAddress.Row == positionFinale.Ligne && DisplayAddress.Column == positionFinale.Colonne)
+                    {
+                        // Si il y a une pièce à manger 
+                        if (pieceMangee != null)
+                        {
+                            // Mange la pièce
+                            Manger(pieceMangee);
+                        }
+
+                        // Arrête le déplacement
+                        return;
+                    }
                 }
             }
         }
 
-        private Position[] TrouverDeplacement(Position positionFinale)
+        public void Manger(Piece piece)
+        {
+            if (piece.Couleur == Couleur) throw new Exception();
+
+            piece.Mange = true;
+        }
+
+        protected virtual List<Position> LimiterDeplacement(List<Position> deplacement)
+        {
+            List<Position> nouveauDeplacement = new List<Position>();
+
+            foreach (Position position in deplacement)
+            {
+                Piece contenuPosition = Echichier[position];
+
+                // Si la position ne contient pas de pièce ou qu'elle contient une pièce ennemie
+                if (contenuPosition == null || contenuPosition.Couleur != Couleur)
+                {
+                    // Ajoute la position à la liste
+                    nouveauDeplacement.Add(position);
+                }
+
+                // Si la position contient une pièce, arrête la boucle
+                if (contenuPosition != null) break;
+            }
+
+            return nouveauDeplacement;
+        }
+
+        private List<Position> TrouverDeplacement(Position positionFinale)
         {
             foreach (Deplacement deplacement in DeplacementsPermis)
             {
-                List<Position> positionsPossibles = Echichier.ObtenirPositions(this, deplacement);
+                // Obtenir les postions pour le déplacement 
+                List<Position> deplacementPossible = Echichier.ObtenirPositions(this, deplacement);
+
+                // Retirer les positions impossibles du déplacement
+                deplacementPossible = LimiterDeplacement(deplacementPossible);
 
                 // Si la position finale est contenu dans les positions possibles 
-                if (positionsPossibles.Find(x => x.Ligne == positionFinale.Ligne && x.Colonne == positionFinale.Colonne) != null)
+                if (deplacementPossible.Find(x => x.Ligne == positionFinale.Ligne && x.Colonne == positionFinale.Colonne) != null)
                 {
-                    // On a trouvé un déplacement valide
-                    return positionsPossibles.ToArray();
+                    // On a trouvé un déplacement correspondant
+                    return deplacementPossible;
                 }
             }
             return null;
         }
+
+
 
         #endregion
     }
