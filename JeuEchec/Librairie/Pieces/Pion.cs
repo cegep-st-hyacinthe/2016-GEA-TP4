@@ -21,13 +21,48 @@ namespace JeuEchec.Librairie.Pieces
         {
             get
             {
-                return new Deplacement[]
+                List<Deplacement> deplacements = new List<Deplacement>();
+
+                deplacements.Add(new Deplacement(new Vecteur[]
                 {
-                    new Deplacement(new Vecteur[]
-                    {
                         new Vecteur(DirectionVerticale, 1)
-                    })
-                };
+                }));
+
+                // Si le pion se trouve sur sa ligne de départ
+                if (DisplayAddress.Row == 1 || DisplayAddress.Row == Echiquier.NB_LIGNES - 2)
+                {
+                    // Il peut avancer de 2
+                    deplacements.Add(new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(DirectionVerticale, 2)
+                    }));
+                }
+
+                // Contenu de la position en diagonale à gauche du pion
+                Piece diagonaleGauche = Echichier[DisplayAddress.Row + (int)DirectionVerticale, DisplayAddress.Column + (int)(Vecteur.DirectionsHorizontales.Gauche)];
+                // Si la position en diagonale à gauche du pion contient une pièce qui n'est pas de la même couleur
+                if (diagonaleGauche != null && diagonaleGauche.Couleur != Couleur)
+                {
+                    // Il peut avancer en diagonale à gauche
+                    deplacements.Add(new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsHorizontales.Gauche, DirectionVerticale, 1)
+                    }));
+                }
+
+                // Contenu de la position en diagonale à droite du pion
+                Piece diagonaleDroite = Echichier[DisplayAddress.Row + (int)DirectionVerticale, DisplayAddress.Column + (int)(Vecteur.DirectionsHorizontales.Droite)];
+                // Si la position en diagonale à droite du pion contient une pièce qui n'est pas de la même couleur
+                if (diagonaleDroite != null && diagonaleDroite.Couleur != Couleur)
+                {
+                    // Il peut avancer en diagonale à droite
+                    deplacements.Add(new Deplacement(new Vecteur[]
+                    {
+                        new Vecteur(Vecteur.DirectionsHorizontales.Droite, DirectionVerticale, 1)
+                    }));
+                }
+
+                return deplacements.ToArray();
             }
         }
 
