@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchec", "JeuEchec\JeuEch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchec.Tests", "JeuEchec.Tests\JeuEchec.Tests.csproj", "{C6DB0B29-8558-452C-9ACE-B933E409D103}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPIP", "TCPIP\TCPIP.csproj", "{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C6DB0B29-8558-452C-9ACE-B933E409D103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DB0B29-8558-452C-9ACE-B933E409D103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DB0B29-8558-452C-9ACE-B933E409D103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
