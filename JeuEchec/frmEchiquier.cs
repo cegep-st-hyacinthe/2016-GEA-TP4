@@ -86,7 +86,7 @@ namespace JeuEchec
 
         private void itmAfficherBlancs_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc))
+            foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc && x.Mange == false))
             {
                 piece.Visible = itmAfficherBlancs.Checked;
             }
