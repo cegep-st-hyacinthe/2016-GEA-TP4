@@ -93,13 +93,14 @@
             // itmReinitialiser
             // 
             this.itmReinitialiser.Name = "itmReinitialiser";
-            this.itmReinitialiser.Size = new System.Drawing.Size(134, 22);
+            this.itmReinitialiser.Size = new System.Drawing.Size(152, 22);
             this.itmReinitialiser.Text = "Réinitialiser";
+            this.itmReinitialiser.Click += new System.EventHandler(this.itmReinitialiser_Click);
             // 
             // itmQuitter
             // 
             this.itmQuitter.Name = "itmQuitter";
-            this.itmQuitter.Size = new System.Drawing.Size(134, 22);
+            this.itmQuitter.Size = new System.Drawing.Size(152, 22);
             this.itmQuitter.Text = "Quitter";
             this.itmQuitter.Click += new System.EventHandler(this.itmQuitter_Click);
             // 
@@ -117,7 +118,7 @@
             this.itmAfficherBlancs.Name = "itmAfficherBlancs";
             this.itmAfficherBlancs.Size = new System.Drawing.Size(170, 22);
             this.itmAfficherBlancs.Text = "Afficher les blancs";
-            this.itmAfficherBlancs.Click += new System.EventHandler(this.itmAfficherBlancs_Click);
+            this.itmAfficherBlancs.CheckedChanged += new System.EventHandler(this.itmAfficherBlancs_CheckedChanged);
             // 
             // frmEchiquier
             // 

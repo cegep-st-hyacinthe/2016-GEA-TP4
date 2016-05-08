@@ -84,20 +84,26 @@ namespace JeuEchec
             (_echiquier[e.SourceAddress.Row, e.SourceAddress.Column]).DeplacerVers(new Position(e.DestinationAddress.Row, e.DestinationAddress.Column));
         }
 
+        private void itmAfficherBlancs_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc))
+            {
+                piece.Visible = itmAfficherBlancs.Checked;
+            }
+            _echiquier.Rafraichir();
+        }
+
+        // À FAIRE
+        private void itmReinitialiser_Click(object sender, EventArgs e)
+        {
+            // ...
+        }
+
         private void itmQuitter_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         #endregion
-
-        private void itmAfficherBlancs_Click(object sender, EventArgs e)
-        {
-            foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc))
-            {
-                piece.Visible = true;
-            }
-            _echiquier.Rafraichir();
-        }
     }
 }
