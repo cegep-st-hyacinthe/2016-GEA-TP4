@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    class Roi : Piece
+    public class Roi : Piece
     {
         #region Champs
 

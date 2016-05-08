@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    class Reine : Piece
+    public class Reine : Piece
     {
         #region Champs
 

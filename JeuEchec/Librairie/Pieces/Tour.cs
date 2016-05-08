@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JeuEchec.Librairie.Pieces
 {
-    class Tour : Piece
+    public class Tour : Piece
     {
         #region Champs
 
