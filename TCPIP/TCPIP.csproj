@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommunicationLib">
-      <HintPath>..\..\..\..\..\Users\Philippe\Desktop\CommunicationLib.dll</HintPath>
+      <HintPath>..\..\..\TP3\Puissance4\Puissance4WPF\bin\Debug\CommunicationLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parametre.cs" />
-    <Compile Include="Poste.cs" />
+    <Compile Include="ParametreTcpIp.cs" />
+    <Compile Include="PosteTcpIp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

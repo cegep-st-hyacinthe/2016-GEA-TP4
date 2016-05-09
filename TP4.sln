@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchec", "JeuEchec\JeuEch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuEchec.Tests", "JeuEchec.Tests\JeuEchec.Tests.csproj", "{C6DB0B29-8558-452C-9ACE-B933E409D103}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPIP", "TCPIP\TCPIP.csproj", "{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpIp", "TCPIP\TcpIp.csproj", "{E54879B3-4CB3-4B8A-BA33-C9C892C8FAF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

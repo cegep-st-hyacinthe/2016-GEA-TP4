@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace TCPIP
+namespace TcpIp
 {
-    public class Parametre
+    public class ParametreTcpIp
     {
-        #region Enumerations
+        #region Énumérations
 
         public enum Modes
         {
@@ -24,7 +24,7 @@ namespace TCPIP
 
         #region Constantes
 
-         private const string FICHIER = "ParametreTCPIP.xml";
+         private const string FICHIER = "ParametreTcpIp.xml";
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace TCPIP
 
         #endregion
 
-        #region Properties
+        #region Propriétés
 
         public string AdresseIp
         {
@@ -74,35 +74,35 @@ namespace TCPIP
 
         #region Constructeurs
 
-        public Parametre(string adresseIp, int port, Modes modes)
+        public ParametreTcpIp(string adresseIp, int port, Modes mode)
         {
             AdresseIp = adresseIp;
             Port = port;
-            Mode = modes;
+            Mode = mode;
         }
 
         #endregion
 
-        #region Methods
+        #region Méthodes
 
         public void Sauvegarder()
         {
-            FileStream file = new FileStream(FICHIER, FileMode.Create);
-            XmlSerializer serializer = new XmlSerializer(typeof(Parametre));
-            serializer.Serialize(file, this);
-            file.Close();
+            FileStream fichier = new FileStream(FICHIER, FileMode.Create);
+            XmlSerializer serializeur = new XmlSerializer(typeof(ParametreTcpIp));
+            serializeur.Serialize(fichier, this);
+            fichier.Close();
         }
 
-        public static Parametre Charger()
+        public static ParametreTcpIp Charger()
         {
-            Parametre parametre = null;
+            ParametreTcpIp parametre = null;
 
             if (File.Exists(FICHIER))
             {
-                FileStream file = new FileStream(FICHIER, FileMode.Open);
-                XmlSerializer serializer = new XmlSerializer(typeof(Parametre));
-                parametre = ((Parametre)serializer.Deserialize(file));
-                file.Close();
+                FileStream fichier = new FileStream(FICHIER, FileMode.Open);
+                XmlSerializer serializeur = new XmlSerializer(typeof(ParametreTcpIp));
+                parametre = ((ParametreTcpIp)serializeur.Deserialize(fichier));
+                fichier.Close();
             }
 
             return parametre;

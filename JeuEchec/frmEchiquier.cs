@@ -3,6 +3,7 @@ using JeuEchec.Librairie.Pieces;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using TcpIp;
 
 namespace JeuEchec
 {
@@ -39,7 +40,7 @@ namespace JeuEchec
 
         #endregion
 
-        #region Méthode(s)
+        #region Méthodes
 
         #endregion
 
