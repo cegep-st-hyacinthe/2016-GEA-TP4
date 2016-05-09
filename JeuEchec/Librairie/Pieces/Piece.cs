@@ -85,6 +85,9 @@ namespace JeuEchec.Librairie.Pieces
             List<Position> deplacement = TrouverDeplacement(positionFinale);
             Piece pieceMangee = Echichier[positionFinale];
 
+            // Si il y a une pièce à la destination et que cette pièce est de la même couleur ou que c'est un roi, le déplacement est invalide
+            if (pieceMangee != null && pieceMangee.Couleur == Couleur || pieceMangee is Roi) return false;
+
             if (deplacement != null && deplacement.Count > 0)
             {
                 foreach (Position position in deplacement)
@@ -124,8 +127,8 @@ namespace JeuEchec.Librairie.Pieces
             {
                 Piece contenuPosition = Echichier[position];
 
-                // Si la position ne contient pas de pièce ou qu'elle contient une pièce ennemie
-                if (contenuPosition == null || contenuPosition.Couleur != Couleur)
+                // Si la position ne contient pas de pièce ou qu'elle contient une pièce ennemie qui n'est pas un roi
+                if (contenuPosition == null)
                 {
                     // Ajoute la position à la liste
                     nouveauDeplacement.Add(position);
