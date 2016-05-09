@@ -127,7 +127,7 @@ namespace JeuEchec.Librairie.Pieces
             {
                 Piece contenuPosition = Echichier[position];
 
-                // Si la position ne contient pas de pièce ou qu'elle contient une pièce ennemie qui n'est pas un roi
+                // Si la position ne contient pas de pièce
                 if (contenuPosition == null)
                 {
                     // Ajoute la position à la liste
