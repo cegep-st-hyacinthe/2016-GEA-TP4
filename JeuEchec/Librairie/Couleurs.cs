@@ -5,6 +5,7 @@ using System.Text;
 
 namespace JeuEchec.Librairie
 {
+    //Énumération des couleurs des joueurs
     public enum Couleurs
     {
         Blanc,

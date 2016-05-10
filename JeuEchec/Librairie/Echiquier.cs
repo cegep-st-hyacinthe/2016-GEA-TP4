@@ -130,6 +130,8 @@ namespace JeuEchec.Librairie
             return (Echiquier)MemberwiseClone();
         }
 
+
+        //Rafraichir la grille
         public void Rafraichir()
         {
             _tableau.Refresh();

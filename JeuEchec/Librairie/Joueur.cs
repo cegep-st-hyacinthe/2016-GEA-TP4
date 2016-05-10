@@ -26,7 +26,7 @@ namespace JeuEchec.Librairie
         #endregion
 
         #region Méthodes
-
+        // Méthode pour changer la position d'une pièce
         public bool DeplacerPiece(Piece piece, Position position)
         {
             if (piece.Couleur == Couleur)

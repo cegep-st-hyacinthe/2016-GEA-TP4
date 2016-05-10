@@ -3,14 +3,14 @@ using JeuEchec.Librairie.Pieces;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using TcpIp;
+
 
 namespace JeuEchec
 {
     /// <summary>
-    /// Auteur:
-    /// Description:
-    /// Date:
+    /// Auteur:Philippe Latour et Maxime Gélinas
+    /// Description: Classe de l'échiquier
+    /// Date:2016-05-09
     /// </summary>
     public partial class frmEchiquier : Form
     {
@@ -27,9 +27,9 @@ namespace JeuEchec
         #region Constructeurs
 
         /// <summary>
-        /// Auteur:
-        /// Description:
-        /// Date
+        /// Auteur:Philippe Latour et Maxime Gélinas
+        /// Description: Constructeur de l'échiquier
+        /// Date: 2016-05-09
         /// </summary>
         public frmEchiquier()
         {
@@ -46,6 +46,7 @@ namespace JeuEchec
 
         #region Événements
 
+        //Création des objets
         private void frmEchiquier_Load(object sender, EventArgs e)
         {
             _echiquier = new Echiquier(viaEchiquier, new Piece[]
@@ -88,6 +89,7 @@ namespace JeuEchec
             _echiquierInitial = _echiquier.Cloner();
         }
 
+        //Méthode SpriteAndDrop
         private void viaEchiquier_SpriteDragAndDropOccured(object sender, VisualArrays.SpriteDragAndDropEventArgs e)
         {
             bool deplacementValide = _joueurCourant.DeplacerPiece(
@@ -101,6 +103,7 @@ namespace JeuEchec
             }
         }
 
+        // Afficher les blancs
         private void itmAfficherBlancs_CheckedChanged(object sender, EventArgs e)
         {
             foreach (Piece piece in (_echiquier.Pieces).Where(x => x.Couleur == Couleurs.Blanc && x.Mange == false))
@@ -110,13 +113,14 @@ namespace JeuEchec
             _echiquier.Rafraichir();
         }
 
-        // À FAIRE
+        // Réinitialiser l'échiquier
         private void itmReinitialiser_Click(object sender, EventArgs e)
         {
             _echiquier = _echiquierInitial;
             _echiquier.Rafraichir();
         }
 
+        // Quitter le jeu
         private void itmQuitter_Click(object sender, EventArgs e)
         {
             Close();
